@@ -5,10 +5,10 @@ const cors = require("cors");
 require("dotenv").config();
 const PORT = process.env.PORT;
 
-// IMPORT STATEMENTS - EXAMPLE IMPORTS
+// IMPORT STATEMENTS
 // const charController = require("./controllers/charController");
 // const statController = require("./controllers/statController");
-// const spellController = require("./controllers/spellController");
+ const ponyController = require("./controllers/ponyController");
 
 // STARTING APP
 const app = express();
@@ -19,9 +19,9 @@ app.use(express.json());
 app.use(logger("dev"));
 app.use(cors());
 
-//ROUTES - EXAMPLE ROUTES
+//ROUTES
 // app.use("/character", charController);
-// app.use("/stats", statController);
+app.use("/pony", ponyController);
 // app.use("/spells", spellController);
 
 // PORT LISTENING
