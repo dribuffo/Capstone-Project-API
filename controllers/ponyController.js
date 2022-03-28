@@ -6,15 +6,15 @@ const router = express.Router();
 const Pony = require("./../models/Pony");
 
 //UPDATE A PONY
-router.patch("/:id", (req, res) => {
-    Pony.findByIdAndUpdate(req.params.id, req.body, { new: true }).then(
-        (newPony) => {
-            res.json({
-                status: 200,
-                Pony: newPony,
-            });
-        }
-    );
+router.put("/update/:name", (req, res) => {
+    Pony.findOneAndUpdate({ name: req.params.name }, req.body, {
+        new: true,
+    }).then((pony) => {
+        res.json({
+            status: 200,
+            updatedPony: pony
+        });
+    });
 });
 
 //GET PONIES
@@ -26,3 +26,6 @@ router.get("/", (req, res) => {
         });
     });
 });
+
+//export
+module.exports = router;

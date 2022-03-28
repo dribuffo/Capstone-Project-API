@@ -7,8 +7,8 @@ const PORT = process.env.PORT;
 
 // IMPORT STATEMENTS
 // const charController = require("./controllers/charController");
-// const statController = require("./controllers/statController");
- const ponyController = require("./controllers/ponyController");
+const spellController = require("./controllers/spellController");
+const ponyController = require("./controllers/ponyController");
 
 // STARTING APP
 const app = express();
@@ -22,7 +22,7 @@ app.use(cors());
 //ROUTES
 // app.use("/character", charController);
 app.use("/pony", ponyController);
-// app.use("/spells", spellController);
+app.use("/spells", spellController);
 
 // PORT LISTENING
 app.listen(PORT, () => console.log(`Server running on port: ${PORT}`));
