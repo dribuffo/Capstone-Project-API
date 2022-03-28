@@ -24,5 +24,13 @@ app.use("/player", playerController);
 app.use("/pony", ponyController);
 app.use("/spells", spellController);
 
+//DEFAULT MESSAGE
+app.get('/', (req, res) => {
+    res.json({
+        status: 200,
+        msg: "default route is working, but there's nothing to see."
+    })
+})
+
 // PORT LISTENING
 app.listen(PORT, () => console.log(`Server running on port: ${PORT}`));
