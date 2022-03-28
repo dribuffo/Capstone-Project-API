@@ -9,6 +9,12 @@ const playerSchema = new mongoose.Schema({
     has_BLU : Boolean,
     blu_spells : bluSchema,
     pony : ponySchema,
+    // bird: birdSchema,
+    // dog: dogSchema,
+    // dragon: dragonSchema,
+    // lynx: lynxSchema,
+    // raid: raidSchema,
+    // other: otherSchema,
 });
 
 module.exports = mongoose.model("Player", playerSchema)
