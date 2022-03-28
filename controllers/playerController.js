@@ -59,9 +59,8 @@ router.put("/update/:name", (req, res) => {
 //UPDATE A PLAYER'S SPELLS BY PLAYER NAME AND SPELL NAME
 router.put("/update/:charName/BLU/:spellName", async (req, res) => {
     const play = await Player.findOne({name: req.params.charName}).populate("blu_spells");
-    const magic = {name: req.params.spellName};
-    // play.spells({name: req.params.spellName});
-    play.blu_spells.magic = req.body;
+    const magic = req.params.spellName
+    play.blu_spells[magic] = req.body[magic]
     play.save()
     res.json({status: 200, Character: play})
 })
