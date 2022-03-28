@@ -6,7 +6,7 @@ require("dotenv").config();
 const PORT = process.env.PORT;
 
 // IMPORT STATEMENTS
-// const charController = require("./controllers/charController");
+const playerController = require("./controllers/playerController");
 const spellController = require("./controllers/spellController");
 const ponyController = require("./controllers/ponyController");
 
@@ -20,7 +20,7 @@ app.use(logger("dev"));
 app.use(cors());
 
 //ROUTES
-// app.use("/character", charController);
+app.use("/player", playerController);
 app.use("/pony", ponyController);
 app.use("/spells", spellController);
 
