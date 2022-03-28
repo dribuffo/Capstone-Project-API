@@ -10,7 +10,7 @@ const Spell = require("../models/Spell");
 //FIND ALL CHARACTERS
 router.get("/find", (req, res) => {
     Player.find()
-    .populate("spells")
+    .populate("blu_spells")
     .populate("pony")
     .then((allChars) => {
         res.json({
@@ -23,7 +23,7 @@ router.get("/find", (req, res) => {
 //FIND A SINGLE CHARACTER BY NAME
 router.get("/find/:name", (req, res) => {
     Player.findOne({name: req.params.name})
-    .populate("spells")
+    .populate("blu_spells")
     .populate("pony")
     .then((oneChar) => {
         res.json({
@@ -46,7 +46,7 @@ router.post("/create", (req, res) => {
 //UPDATE A CHARACTER'S NAME, ACTIVE STATUS, BLU STATUS
 router.put("/update/:name", (req, res) => {
     Player.findOneAndUpdate({name: req.params.name}, req.body, {new: true})
-        .populate("spells")
+        .populate("blu_spells")
         .populate("pony")
         .then((oneChar) => {
             res.json({
@@ -58,9 +58,10 @@ router.put("/update/:name", (req, res) => {
 
 //UPDATE A PLAYER'S SPELLS BY PLAYER NAME AND SPELL NAME
 router.put("/update/:charName/BLU/:spellName", async (req, res) => {
-    const play = await Player.findOne({name: req.params.charName}).populate("spells");
-    const magic = await Spell.findOne({name: req.params.spellName});
-    play.spells.push(spell);
+    const play = await Player.findOne({name: req.params.charName}).populate("blu_spells");
+    const magic = {name: req.params.spellName};
+    // play.spells({name: req.params.spellName});
+    play.blu_spells.magic = req.body;
     play.save()
     res.json({status: 200, Character: play})
 })
@@ -68,8 +69,8 @@ router.put("/update/:charName/BLU/:spellName", async (req, res) => {
 //UPDATE A PLAYER'S PONYS BY PLAYER NAME AND PONY NAME
 router.put("/update/:charName/pony/:ponyName", async (req, res) => {
     const play = await Player.findOne({name: req.params.charName}).populate("pony");
-    const horse = await Pony.findOne({name: req.params.spellName});
-    play.pony.push(horse);
+    const horse = req.params.ponyName
+    play.pony[horse] = req.body[horse]
     play.save()
     res.json({status: 200, Character: play})
 })
