@@ -3,6 +3,7 @@ const express = require("express");
 const logger = require("morgan");
 const cors = require("cors");
 require("dotenv").config();
+require("express-async-errors");
 const PORT = process.env.PORT;
 
 // IMPORT STATEMENTS
@@ -28,6 +29,7 @@ app.use("/pony", ponyController);
 app.use("/spells", spellController);
 app.use("/api/users", userRoutes);
 app.use("/api/auth", authRoutes);
+
 //DEFAULT MESSAGE
 app.get('/', (req, res) => {
     res.json({
