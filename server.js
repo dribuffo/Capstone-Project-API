@@ -9,6 +9,9 @@ const PORT = process.env.PORT;
 const playerController = require("./controllers/playerController");
 const spellController = require("./controllers/spellController");
 const ponyController = require("./controllers/ponyController");
+const userRoutes = require("./controllers/userController");
+const authRoutes = require("./controllers/authController");
+
 
 // STARTING APP
 const app = express();
@@ -23,7 +26,8 @@ app.use(cors());
 app.use("/player", playerController);
 app.use("/pony", ponyController);
 app.use("/spells", spellController);
-
+app.use("/api/users", userRoutes);
+app.use("/api/auth", authRoutes);
 //DEFAULT MESSAGE
 app.get('/', (req, res) => {
     res.json({
