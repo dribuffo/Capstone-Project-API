@@ -58,11 +58,11 @@ The back end database will be (placeholder) based and will have a main "player" 
 
 |          Component           | Priority | Estimated Time | Actual Time |
 | :--------------------------: | :------: | :------------: | :---------: |
-|        Create Models         |    H     |    2 hours     |      ?      |
-|       CRUD Operations        |    H     |    3 hours     |      ?      |
-|         CRUD Testing         |    H     |    3 hours     |      ?      |
-|          User Auth           |    H     |    3 hours     |      ?      |
-| Adjusting CRUD for User Auth |    H     |    2 hours     |      ?      |
+|        Create Models         |    H     |    2 hours     |      1 hr      |
+|       CRUD Operations        |    H     |    3 hours     |      3 hrs      |
+|         CRUD Testing         |    H     |    3 hours     |      1 hrs      |
+|          User Auth           |    H     |    3 hours     |      1 hr      |
+| Adjusting CRUD for User Auth |    H     |    2 hours     |      N/A      |
 |          Deploying           |    H     |    2 hours     |      ?      |
 |        Editing README        |    M     |     1 hour     |      ?      |
 |            Total             |          |     16 hrs     |      ?      |
@@ -112,12 +112,13 @@ The back end database will be (placeholder) based and will have a main "player" 
 ---
 
 ## LIBRARIES & ADDITIONAL DEPENDENCIES
-
+jsonwebtoken , joi , joi-password-completixty, bcrypt
 ---
 
 ## CREDITED CODE BLOCKS
-
 ---
+[User Auth](https://www.youtube.com/watch?v=HGgyd1bYWsE)
+I followed his step by step video on making a user auth for the front and back end of my project.
 
 ## SURMOUNTABLES
 
