@@ -74,6 +74,15 @@ router.put("/update/:charName/pony/:ponyName", async (req, res) => {
     res.json({status: 200, Character: play})
 })
 
+//UPDATE A PLAYER'S BIRDS BY PLAYER NAME AND BIRD NAME
+router.put("/update/:charName/bird/:birdName", async (req, res) => {
+    const play = await Player.findOne({name: req.params.charName}).populate("bird");
+    const bird = req.params.birdName
+    play.bird[bird] = req.body[bird]
+    play.save()
+    res.json({status: 200, Character: play})
+})
+
 
 //DELETE A CHARACTER
 router.delete("/delete/:name", (req, res) => {

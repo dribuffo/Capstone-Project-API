@@ -61,8 +61,8 @@ The back end database will be (placeholder) based and will have a main "player" 
 |        Create Models         |    H     |    2 hours     |      1 hr      |
 |       CRUD Operations        |    H     |    3 hours     |      3 hrs      |
 |         CRUD Testing         |    H     |    3 hours     |      1 hrs      |
-|          User Auth           |    H     |    3 hours     |      1 hr      |
-| Adjusting CRUD for User Auth |    H     |    2 hours     |      N/A      |
+|          User Auth           |    H     |    3 hours     |      2 hr      |
+| Adjusting CRUD for User Auth |    H     |    2 hours     |      2 hrs      |
 |          Deploying           |    H     |    2 hours     |      ?      |
 |        Editing README        |    M     |     1 hour     |      ?      |
 |            Total             |          |     16 hrs     |      ?      |
@@ -117,7 +117,7 @@ jsonwebtoken , joi , joi-password-completixty, bcrypt
 
 ## CREDITED CODE BLOCKS
 ---
-[User Auth](https://www.youtube.com/watch?v=HGgyd1bYWsE)
+[User Auth](https://www.youtube.com/watch?v=xvqXCACX9k8)
 I followed his step by step video on making a user auth for the front and back end of my project.
 
 ## SURMOUNTABLES

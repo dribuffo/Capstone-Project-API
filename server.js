@@ -12,6 +12,7 @@ const spellController = require("./controllers/spellController");
 const ponyController = require("./controllers/ponyController");
 const userRoutes = require("./controllers/userController");
 const authRoutes = require("./controllers/authController");
+const birdController = require("./controllers/birdController")
 
 
 // STARTING APP
@@ -26,6 +27,7 @@ app.use(cors());
 //ROUTES
 app.use("/player", playerController);
 app.use("/pony", ponyController);
+app.use("/bird", birdController)
 app.use("/spells", spellController);
 app.use("/api/users", userRoutes);
 app.use("/api/auth", authRoutes);
