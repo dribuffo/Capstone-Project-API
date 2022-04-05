@@ -6,8 +6,8 @@ const birdSchema = require("./Bird")
 
 const playerSchema = new mongoose.Schema({
     name: String,
-    is_active : Boolean,
-    has_BLU : Boolean,
+    is_active : {type: Boolean, default: false},
+    has_BLU : {type: Boolean, default: false},
     blu_spells : bluSchema,
     pony : ponySchema,
     bird: birdSchema,
